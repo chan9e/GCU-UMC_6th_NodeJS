@@ -2,7 +2,7 @@ import express from 'express';
 import { tempRouter } from './routes/temp.route.js';
 import { response } from './config/response.js';
 import { userRouter } from './routes/user.route.js';
-import { specs } from './swagger/swagger.config.js';
+import { specs } from './swagger/swagger.config.js'; //사용되지 않는 듯
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { readFileSync, existsSync } from 'fs'; // fs 모듈에서 readFileSync와 existsSync를 임포트
