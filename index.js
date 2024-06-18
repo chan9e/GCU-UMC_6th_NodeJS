@@ -2,7 +2,7 @@ import express from 'express';
 import { tempRouter } from './routes/temp.route.js';
 import { response } from './config/response.js';
 import { userRouter } from './routes/user.route.js';
-import { specs } from './swagger/swagger.config.js'; //사용되지 않는 듯
+import { storeRouter } from './routes/store.route.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { readFileSync, existsSync } from 'fs'; // fs 모듈에서 readFileSync와 existsSync를 임포트
@@ -46,6 +46,7 @@ if (existsSync(swaggerFilePath)) {
 // router setting
 app.use('/temp', tempRouter);
 app.use('/user', userRouter);
+app.use('/:storeId', storeRouter);
 
 // error handling
 app.use((err, req, res, next) => {
